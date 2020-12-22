@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://v1.vuepress.vuejs.org/hero.png
+heroImage: https://denx.netlify.app/image/logo.jpg
 tagline: 
 actionText: Quick Start →
 actionLink: /seminar/

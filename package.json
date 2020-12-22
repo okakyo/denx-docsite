@@ -10,13 +10,21 @@
   "repository": "/denx-tutorial",
   "scripts": {
     "dev": "vuepress dev src/docs",
-    "build": "vuepress build src/docs"
+    "build": "vuepress build src/docs",
+    "lint": "textlint --fix src/docs/**/*.md"
+  },
+  "husky": {},
+  "pre-commit": {
+    "*{.md,txt}": "npm run lint"
   },
   "license": "MIT",
   "devDependencies": {
     "husky": "^4.3.6",
     "pre-commit": "^1.2.2",
     "textlint": "^11.7.6",
+    "textlint-filter-rule-comments": "^1.2.2",
+    "textlint-rule-preset-ja-technical-writing": "^4.0.1",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0",
     "vuepress": "^1.5.3"
   },
   "dependencies": {
