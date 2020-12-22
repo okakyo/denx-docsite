@@ -1,0 +1,25 @@
+{
+  "name": "denx-tutorial",
+  "version": "0.0.1",
+  "description": "DENX の共有すべき情報をまとめました",
+  "main": "index.js",
+  "authors": {
+    "name": "okakyo",
+    "email": ""
+  },
+  "repository": "/denx-tutorial",
+  "scripts": {
+    "dev": "vuepress dev src/docs",
+    "build": "vuepress build src/docs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^4.3.6",
+    "pre-commit": "^1.2.2",
+    "textlint": "^11.7.6",
+    "vuepress": "^1.5.3"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
