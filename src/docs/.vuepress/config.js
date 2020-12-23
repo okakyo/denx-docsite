@@ -52,15 +52,17 @@ module.exports = {
     docsDir: '',
     editLinkText: '',
     lastUpdated: false,
+    
     nav: [
+      {
+        text: 'Tutorial',
+        link: '/tutorial/'
+      },
       {
         text: '勉強会',
         link: '/seminar/',
       },
-      {
-        text: '使い方',
-        link: '/how-to/'
-      },
+      
       {
         text: 'VuePress',
         link: 'https://v1.vuepress.vuejs.org'
@@ -68,6 +70,9 @@ module.exports = {
     ],
     sidebar: addPathDir
   },
+  markdown: {
+      linkify: true
+    },
 
   /**
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/

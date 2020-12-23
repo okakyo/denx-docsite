@@ -1,9 +1,9 @@
 ---
 home: true
-heroImage: https://denx.netlify.app/image/logo.jpg
+heroImage: https://vuepress.vuejs.org/hero.png
 tagline: 
 actionText: Quick Start →
-actionLink: /seminar/
+actionLink: /tutorial/
 features:
 - title: 部員について
   details: 総会の議事録
