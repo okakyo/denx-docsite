@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://v1.vuepress.vuejs.org/hero.png
+heroImage: img/hero.png
 tagline: 
 actionText: Quick Start →
 actionLink: /tutorial/

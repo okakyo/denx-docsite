@@ -40,18 +40,38 @@ module.exports = {
       },
       {
         text: '勉強会',
-        link: '/web/',
+        link: '/seminar/',
       },
       
       {
         text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
+        link: 'https://vitepress.vuejs.org/'
       }
     ],
-    sidebar: [
-      {text:"チュートリアル",link:"/tutorial"},
-      {text:"勉強会",link:"/web"},
-    ]
+    sidebar: {
+      "/tutorial/":[{
+        text:"チュートリアル",
+        children:[
+          {text:"はじめに",link:"/tutorial/"},
+          {text:"マークダウンの記法",link:"/tutorial/markdown"},
+          {text:"ルール",link:"/tutorial/rule"}
+        ]
+      }],
+      "/seminar/":[
+        {
+          text:"勉強会",
+          link:"/seminar/"
+        },
+        {
+        text:"Web",
+        children:[
+          {text:"環境構築",link:"/seminar/web/"},
+          {text:"HTML",link:"/seminar/web/1st"},
+          {text:"CSS について",link:"/seminar/web/2nd"},
+        ]
+      }]
+    }
+
   },
   markdown: {
       linkify: true
