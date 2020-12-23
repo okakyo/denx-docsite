@@ -1,29 +1,10 @@
 const { description } = require('../../../package')
 
-const fs = require('fs');
-const dirpath = "src/docs"
-let addPathDir = {}
-
-fs.readdirSync(dirpath).filter((f) => {
-  return fs.existsSync(dirpath + "/" + f) && fs.statSync(dirpath + "/" + f).isDirectory()
-}).map(dir=>{
-
-    if(dir!=='.vuepress'){
-         addPathDir[`/${dir}/`]=
-            [{title: dir,
-            collapsable: true,
-            children: fs.readdirSync(dirpath + "/" + dir).map((childDir) => {
-                return  childDir==="README.md"|| childDir==="index.md" ? "":childDir.split(".")[0]
-            })}]
-        }
-    })
-
-
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'DENX ドキュメント ',
+  title: 'DENX アーカイブ',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -49,10 +30,9 @@ module.exports = {
   themeConfig: {
     repo: '',
     editLinks: false,
-    docsDir: '',
+    docsDir: 'src/docs',
     editLinkText: '',
     lastUpdated: false,
-    
     nav: [
       {
         text: 'Tutorial',
@@ -60,7 +40,7 @@ module.exports = {
       },
       {
         text: '勉強会',
-        link: '/seminar/',
+        link: '/web/',
       },
       
       {
@@ -68,7 +48,10 @@ module.exports = {
         link: 'https://v1.vuepress.vuejs.org'
       }
     ],
-    sidebar: addPathDir
+    sidebar: [
+      {text:"チュートリアル",link:"/tutorial"},
+      {text:"勉強会",link:"/web"},
+    ]
   },
   markdown: {
       linkify: true
