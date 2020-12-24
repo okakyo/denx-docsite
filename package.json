@@ -9,9 +9,9 @@
   },
   "repository": "/denx-tutorial",
   "scripts": {
-    "dev": "vitepress dev src/docs",
-    "build": "vitepress build src/docs",
-    "lint": "textlint --fix src/docs/**/*.md"
+    "dev": "vitepress dev src",
+    "build": "vitepress build src",
+    "lint": "textlint --fix src/**/*.md"
   },
   "husky": {},
   "pre-commit": {

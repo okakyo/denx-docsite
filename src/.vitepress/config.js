@@ -1,4 +1,4 @@
-const { description } = require('../../../package')
+const { description } = require('../../package')
 
 module.exports = {
   /**
@@ -35,14 +35,13 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
-        text: 'Tutorial',
+        text: '使い方',
         link: '/tutorial/'
       },
       {
-        text: '勉強会',
-        link: '/seminar/',
+        text: 'Web 勉強会',
+        link: '/web/',
       },
-      
       {
         text: 'VuePress',
         link: 'https://vitepress.vuejs.org/'
@@ -50,26 +49,39 @@ module.exports = {
     ],
     sidebar: {
       "/tutorial/":[{
-        text:"チュートリアル",
+        text:`使い方`,
         children:[
           {text:"はじめに",link:"/tutorial/"},
           {text:"マークダウンの記法",link:"/tutorial/markdown"},
           {text:"ルール",link:"/tutorial/rule"}
         ]
       }],
-      "/seminar/":[
+      "/web/":[
         {
-          text:"勉強会",
-          link:"/seminar/"
+          text:"Web 勉強会",
+          link:"/web/"
         },
         {
-        text:"Web",
-        children:[
-          {text:"環境構築",link:"/seminar/web/"},
-          {text:"HTML",link:"/seminar/web/1st"},
-          {text:"CSS について",link:"/seminar/web/2nd"},
-        ]
-      }]
+          text:"Web 入門",
+          children:[
+            {text:"はじめに",link:"/web/"},
+            {text:"HTML/ CSS について",link:"/web/1st"},
+            {text:"Web アプリ構築について",link:"/web/2nd"},
+            {text:"Node.jsについて",link:"/web/3rd"},
+            {text:"API構築について",link:"//web/4th"},
+          ]
+        },
+        {
+          text:"Web 応用",
+          children:[
+            {text:"準備中",link:"/web/5th"},
+            {text:"CSS について",link:"/web/6th"},
+            {text:"CSS について",link:"/web/7th"},
+            {text:"CSS について",link:"/web/8th"},
+            {text:"CSS について",link:"/web/9th"},
+          ]
+        },
+      ]
     }
 
   },

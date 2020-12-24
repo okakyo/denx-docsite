@@ -1,2 +1,0 @@
-# DTM とは
-## Abstruction
