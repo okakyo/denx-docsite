@@ -178,9 +178,6 @@ import scipy as sp
 
 ## Vuepress ならではの記法
 
-### 数式
-- 書き方
-
 ### UML
 
 - 書き方
