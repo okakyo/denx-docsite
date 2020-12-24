@@ -181,15 +181,6 @@ import scipy as sp
 ### 数式
 - 書き方
 
-```
-// Latex で記入する
-$$\int^{b}_{a} f(x) dx = \lim_{n \to \infty} \sum^{n-1}_{i=1} f(x_{i}) \Delta x$$
-```
-
-- **結果**
-
-$$\int^{b}_{a} f(x) dx = \lim_{n \to \infty} \sum^{n-1}_{i=1} f(x_{i}) \Delta x$$
-
 ### UML
 
 - 書き方
