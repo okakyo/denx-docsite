@@ -95,7 +95,7 @@
 >```
 >```python
 >import numpy as np
->import scipy as sp
+>import scipy as sp 
 >```
 
 * 補足
@@ -178,11 +178,67 @@ import scipy as sp
 
 ## Vuepress ならではの記法
 
+### 数式
+- 書き方
+
+```
+// Latex で記入する
+$$\int^{b}_{a} f(x) dx = \lim_{n \to \infty} \sum^{n-1}_{i=1} f(x_{i}) \Delta x$$
+```
+
+- **結果**
+
+$$\int^{b}_{a} f(x) dx = \lim_{n \to \infty} \sum^{n-1}_{i=1} f(x_{i}) \Delta x$$
+
+### UML
+
+- 書き方
+
+```
+```plantuml
+actor Entrant
+
+Entrant -> Ticket : Attend Event Request
+
+activate Ticket
+Ticket -> Member : Create Member Request
+
+activate Member
+Member -> Member : Create Member
+Ticket <-- Member : Create Member Response
+deactivate Member
+
+Ticket -> Ticket : Create Ticket
+Entrant <-- Ticket : Attend Event Response
+deactivate Ticket
+```
+
+- **結果**
+
+
+```plantuml
+actor Entrant
+
+Entrant -> Ticket : Attend Event Request
+
+activate Ticket
+Ticket -> Member : Create Member Request
+
+activate Member
+Member -> Member : Create Member
+Ticket <-- Member : Create Member Response
+deactivate Member
+
+Ticket -> Ticket : Create Ticket
+Entrant <-- Ticket : Attend Event Response
+deactivate Ticket
+```
 
 
 ### Custom Containers
 
 - 書き方
+
 ```
 ::: tip
 This is a tip
