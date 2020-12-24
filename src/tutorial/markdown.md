@@ -221,7 +221,9 @@ Ticket -> Ticket : Create Ticket
 Entrant <-- Ticket : Attend Event Response
 deactivate Ticket
 ```
+### 数式
 
+準備中 (表示されたが、エラーでデプロイできなくなってしまったため)
 
 ### Custom Containers
 

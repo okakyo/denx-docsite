@@ -1,21 +1,33 @@
 const fs = require("fs");
 const ignoreFileName = ["README","index"]
 
-const  parsedFile =(rootDir,searchDir)=>{
-    const parentPath = rootDir+"/"+searchDir
-    return fs.readdirSync(parentPath,{withFileTypes:true})
-      .filter(file=>!file.isDirectory())
-      .map(childDir=>{
-        const fileName = childDir.name.split(".")[0];
-        const filePath  = ignoreFileName.includes(fileName)?"/":`/${fileName}`
-        const file = fs.readFileSync(parentPath+"/"+childDir.name,"utf-8");
-        console.log(file)
-        return {
-            text:ignoreFileName.includes(fileName)?"はじめに":fileName,
-            link: "/"+searchDir+filePath
+
+const parsedChildFile = (rootDir,searchDir)=>{
+    const childPath = rootDir+"/"+searchDir;
+    return fs.readdirSync(childPath,{withFileTypes:true}).filter(file =>!file.isDirectory()).map(file =>{
+        const fileName = file.name.split(".")[0]
+        const filePath = ignoreFileName.includes(fileName)?"/":"/"+fileName
+        const responseObject  =  {
+            text:fileName,
+            link:childPath+filePath
         }
-    }).sort((a,b)=>{if(a.link<b.link) return -1;if(a.link > b.link) return 1;return 0;})
+        console.log(responseObject);
+        return responseObject
+    })
 }
 
-const file= parsedFile("src","web");
+const  parsedParentFile =(rootDir,searchDir)=>{
+    const parentPath = rootDir+"/"+searchDir
+     return fs.readdirSync(parentPath,{withFileTypes:true}).filter(file=>file.isDirectory()).map((file) =>{
+        const fileName = file.name.split(".")[0]
+        const filePath = ignoreFileName.includes(fileName)?"/":"/"+fileName
+        return  {
+                    text: fileName,
+                    children: parsedChildFile(parentPath,filePath)
+                }
+        })
+
+}
+
+const file= parsedParentFile("src","web");
 console.log(file);

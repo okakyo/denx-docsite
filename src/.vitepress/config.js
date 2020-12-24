@@ -1,5 +1,7 @@
 const { description } = require('../../package')
 
+
+
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
@@ -23,12 +25,6 @@ module.exports = {
     ['link', { href:"https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" ,rel: 'stylesheet'}],
     ['link', { href:" https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css",rel:"stylesheet"}],
   ],
-
-  /**
-   * Theme configuration, here is the default theme configuration for VuePress.
-   *
-   * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
-   */
   themeConfig: {
     repo: '',
     editLinks: false,
@@ -49,6 +45,7 @@ module.exports = {
         link: 'https://vitepress.vuejs.org/'
       }
     ],
+    // TODO : Sidebar を自動化するシステム（yaml ファイルで管理したい）
     sidebar: {
       "/tutorial/":[
         {
@@ -94,15 +91,11 @@ module.exports = {
       // use more markdown-it plugins!
         md.use(require('markdown-it-video'))
         md.use(require('markdown-it-textual-uml'))
-        md.use(require('markdown-it-texmath'))
     }
     },
 
   /**
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
-  plugins: [
-    '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
-  ]
+ 
 }

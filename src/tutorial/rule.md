@@ -13,9 +13,15 @@ GitHub Flow についてのやり方は次の記事の通りです。
 5. 問題なければ PR をマージする
     - コンフリクトが発生していたら、PR 作成者がその部分を修正して main ブランチにマージ後、push を 実行
 
+詳しい実装方法は次のサイトで各自確認してください。
+
+<div class="blogCard"><div class="blogCardCont"><div class="blogCardTxt"><p class="blogCardTitle"><a href="https://backlog.com/ja/git-tutorial/pull-request/01/" target="_blank">プルリクエストとは？｜サル先生のGit入門【プロジェクト管理ツールBacklog】</a></p><p></p></div><div class="blogCardImg"><div class="blogCardImg__wrap"><a href="https://backlog.com/ja/git-tutorial/pull-request/01/" target="_blank"><img src="https://backlog.com/ja/git-tutorial/site_image.png" alt=""></a></div></div></div><div class="blogCardFooter"><a href="https://backlog.com/ja/git-tutorial/pull-request/01/"><img src="http://www.google.com/s2/favicons?domain=https://backlog.com/ja/git-tutorial/pull-request/01/" alt="">backlog.com</a></div></div>
+
 ## 講座について
 
-講座の資料は次のように、**SlideShare** に掲載し、クリップボードで埋め込んで掲載することも可能です。
+講座の資料は次のように、**SlideShare**　や **Google スライド** に掲載し、シェアカードをmarkdown に直接埋め込むとで掲載することができます。
+
+これによって、ブログを参照すればいつでも各自で確認やダウンロードすることができます。
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/ISLKYsDrZLNzF0" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ssuserc2210b/my-portfolio-206279473" title="My portfolio" target="_blank">My portfolio</a> </strong> from <strong><a href="https://www.slideshare.net/ssuserc2210b" target="_blank">ssuserc2210b</a></strong> </div>
 
