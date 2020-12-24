@@ -64,21 +64,20 @@ module.exports = {
         {
           text:"Web 入門",
           children:[
-            {text:"はじめに",link:"/web/"},
-            {text:"HTML/ CSS について",link:"/web/1st"},
-            {text:"Web アプリ構築について",link:"/web/2nd"},
-            {text:"Node.jsについて",link:"/web/3rd"},
-            {text:"API構築について",link:"//web/4th"},
+            {text:"はじめに",link:"/web/tutorial/1st"},
+            {text:"HTML/ CSS について",link:"/web/tutorial/2nd"},
+            {text:"Web アプリ構築について",link:"/web/tutorial/3rd"},
+            {text:"Node.jsについて",link:"/web/tutorial/4th"},
+            {text:"API構築について",link:"/web/tutorial/5th"},
           ]
         },
         {
           text:"Web 応用",
           children:[
-            {text:"準備中",link:"/web/5th"},
-            {text:"CSS について",link:"/web/6th"},
-            {text:"CSS について",link:"/web/7th"},
-            {text:"CSS について",link:"/web/8th"},
-            {text:"CSS について",link:"/web/9th"},
+            {text:"準備中",link:"/web/tutorial/6th"},
+            {text:"準備中",link:"/web/tutorial/7th"},
+            {text:"準備中",link:"/web/tutorial/8th"},
+            {text:"準備中",link:"/web/tutorial/9th"},
           ]
         },
       ]
