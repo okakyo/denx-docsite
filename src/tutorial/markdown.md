@@ -232,6 +232,18 @@ This is a details block, which does not work in IE / Edge
 詳しくはこちらを参照してください。
 - [a list of Emoji](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json)
 
+
+### Embed
+
+Youtube のURL を掲載して動画を流すこともできます。
+```
+@[youtube](https://www.youtube.com/watch?v=pVLt-XJLZiI)
+```
+
+* **結果**
+@[youtube](https://www.youtube.com/watch?v=pVLt-XJLZiI)
+
+
 ## 参考文献
 - [公式ドキュメント](https://v1.vuepress.vuejs.org/guide/markdown.html#header-anchors)
 - [Qiita markdown チートシート](https://qiita.com/kamorits/items/6f342da395ad57468ae3)

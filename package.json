@@ -20,6 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "husky": "^4.3.6",
+    "markdown-it-video": "^0.6.3",
     "pre-commit": "^1.2.2",
     "textlint": "^11.7.6",
     "textlint-filter-rule-comments": "^1.2.2",

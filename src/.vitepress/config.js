@@ -48,14 +48,16 @@ module.exports = {
       }
     ],
     sidebar: {
-      "/tutorial/":[{
-        text:`使い方`,
-        children:[
-          {text:"はじめに",link:"/tutorial/"},
-          {text:"マークダウンの記法",link:"/tutorial/markdown"},
-          {text:"ルール",link:"/tutorial/rule"}
-        ]
-      }],
+      "/tutorial/":[
+        {
+          text:`使い方`,
+          children:[
+            {text:"はじめに",link:"/tutorial/"},
+            {text:"マークダウンの記法",link:"/tutorial/markdown"},
+            {text:"ルール",link:"/tutorial/rule"}
+          ]
+        }
+      ],
       "/web/":[
         {
           text:"Web 勉強会",
@@ -85,7 +87,11 @@ module.exports = {
 
   },
   markdown: {
-      linkify: true
+      linkify: true,
+      config: (md) => {
+      // use more markdown-it plugins!
+        md.use(require('markdown-it-video'))
+    }
     },
 
   /**

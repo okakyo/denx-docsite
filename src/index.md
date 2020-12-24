@@ -11,5 +11,5 @@ features:
   details: これまでの勉強会アーカイブ。
 - title: その他
   details: Feature 3 Description
-footer: Made by okakyo with ❤️
+footer: Made by okakyo 4 DENX @2020
 ---
