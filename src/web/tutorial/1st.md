@@ -1,4 +1,8 @@
-# HTML / CSS について
+---
+title: HTML/CSS について
+---
+
+# {{$page.frontmatter.title}}
 
 ## HTML とは
 

@@ -178,6 +178,10 @@ import scipy as sp
 
 ## Vuepress ならではの記法
 
+### 数式
+
+**準備中 (表示されたが、エラーでデプロイできなくなってしまったため)**
+
 ### UML
 
 - 書き方
@@ -221,9 +225,31 @@ Ticket -> Ticket : Create Ticket
 Entrant <-- Ticket : Attend Event Response
 deactivate Ticket
 ```
-### 数式
 
-準備中 (表示されたが、エラーでデプロイできなくなってしまったため)
+### Frontmatter
+マークダウンの記事のトップで Yaml Formatter を利用して meta 情報をセットすることができます。
+
+```
+---
+title: Blogging Like a Hacker
+lang: en-US
+---
+```
+
+この情報は、`$page.formatter` を利用することで設定した文字を使用することができます。
+
+### Table of Contents 
+
+markdown における Table of Contents を呼び出すこともできます。
+
+- 書き方
+```
+[[toc]]
+```
+
+- **結果**
+
+[[toc]]
 
 ### Custom Containers
 
@@ -260,10 +286,6 @@ This is a warning
 This is a dangerous warning
 :::
 
-::: details
-This is a details block, which does not work in IE / Edge
-:::
-
 ### 絵文字
 
 * 書き方
@@ -279,6 +301,22 @@ This is a details block, which does not work in IE / Edge
 - [a list of Emoji](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json)
 
 
+### コードの呼び出し
+
+このサイトでは、特定のファイルの中身を呼び出すことができる。
+
+- 書き方 
+
+`/example/hello.md` を呼び出したいとき
+
+```
+<<< @/../example/hello.md
+```
+
+- 結果
+
+<<< @/../example/hello.md
+
 ### Embed
 
 Youtube のURL を掲載して動画を流すこともできます。
@@ -291,5 +329,5 @@ Youtube のURL を掲載して動画を流すこともできます。
 
 
 ## 参考文献
-- [公式ドキュメント](https://v1.vuepress.vuejs.org/guide/markdown.html#header-anchors)
+- [公式ドキュメント](https://vitepress.vuejs.org/guide/markdown.html#header-anchors)
 - [Qiita markdown チートシート](https://qiita.com/kamorits/items/6f342da395ad57468ae3)

@@ -1,5 +1,5 @@
 const { description } = require('../../package')
-
+const parsedParentFile = require("./file");
 
 
 module.exports = {
@@ -57,31 +57,7 @@ module.exports = {
           ]
         }
       ],
-      "/web/":[
-        {
-          text:"Web 勉強会",
-          link:"/web/"
-        },
-        {
-          text:"Web 入門",
-          children:[
-            {text:"はじめに",link:"/web/tutorial/1st"},
-            {text:"HTML/ CSS について",link:"/web/tutorial/2nd"},
-            {text:"Web アプリ構築について",link:"/web/tutorial/3rd"},
-            {text:"Node.jsについて",link:"/web/tutorial/4th"},
-            {text:"API構築について",link:"/web/tutorial/5th"},
-          ]
-        },
-        {
-          text:"Web 応用",
-          children:[
-            {text:"準備中",link:"/web/tutorial/6th"},
-            {text:"準備中",link:"/web/tutorial/7th"},
-            {text:"準備中",link:"/web/tutorial/8th"},
-            {text:"準備中",link:"/web/tutorial/9th"},
-          ]
-        },
-      ]
+      "/web/":parsedParentFile("src","web")
     }
 
   },

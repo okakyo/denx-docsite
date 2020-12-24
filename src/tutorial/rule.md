@@ -1,5 +1,14 @@
 # 記事を書くにあたって
 
+## 記事のフォーマット
+
+記事のフォーマットには、次のように定めています。この記法に従って記述してください。(この部分は役員たちで話し合い、任意に変更してください。)
+
+- フォーマット例
+
+<<< @/../example/ArticleLayout.md
+
+
 ## 記事の管理
 この記事では、GitHub を利用して記事を管理しています。GitHub Flow を利用して記事を管理します。
 
@@ -24,8 +33,6 @@ GitHub Flow についてのやり方は次の記事の通りです。
 これによって、ブログを参照すればいつでも各自で確認やダウンロードすることができます。
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/ISLKYsDrZLNzF0" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ssuserc2210b/my-portfolio-206279473" title="My portfolio" target="_blank">My portfolio</a> </strong> from <strong><a href="https://www.slideshare.net/ssuserc2210b" target="_blank">ssuserc2210b</a></strong> </div>
-
-
 
 :::danger 掲載する資料について
 
