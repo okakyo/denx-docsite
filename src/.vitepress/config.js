@@ -1,6 +1,9 @@
 const { description } = require('../../package')
 const parsedParentFile = require("./file");
 
+const fs = require("fs");
+const yaml = require("yaml")
+const getYamlFile = yaml.parse(fs.readFileSync(__dirname+"/nav.yaml",'utf-8'))
 
 module.exports = {
   /**
@@ -57,7 +60,7 @@ module.exports = {
           ]
         }
       ],
-      "/web/":parsedParentFile("src","web")
+      "/web/":parsedParentFile("src","web",getYamlFile)
     }
 
   },

@@ -1,0 +1,32 @@
+tutorial:
+  title: チュートリアル
+  children: 
+    index: 初めに
+    markdown: マークダウンの記法について
+    rule: 記事を書くにあたって
+
+web:
+  title: Web 開発
+  tutorial:
+    title: チュートリアル
+    children:
+      index: はじめに
+      1st: HTML/CSS について
+      2nd: TypeScript の文法
+      3rd: テスト環境の実装
+      4th: 準備中
+      5th: 準備中
+      6th: 準備中
+      7th: 準備中
+      8th: 準備中
+      9th: 準備中
+  frontend:
+    title: フロントエンド開発
+    children:
+      index : はじめに
+      1st : 基本的な文法
+  backend:
+    title: バックエンド開発
+    children:
+      index: はじめに
+      1st : 開発環境について
