@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "vitepress dev src",
     "build": "vitepress build src",
-    "lint": "textlint --fix src/**/*.md"
+    "lint": "textlint --fix src/**/*.md",
+    "check": "node src/.vitepress/file"
   },
   "husky": {},
   "pre-commit": {

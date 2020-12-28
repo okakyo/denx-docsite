@@ -23,8 +23,12 @@ const parsedChildFile = (rootDir,parentDir,searchDir,yamlArray)=>{
 const  parsedParentFile =(rootDir,searchDir,yamlArray)=>{
     const parentPath = rootDir+"/"+searchDir
     const selectedFileList = yamlArray[searchDir]
-    console.log(selectedFileList);
-     return fs.readdirSync(parentPath,{withFileTypes:true}).filter(file=>file.isDirectory()).map((file) =>{
+    console.log(selectedFileList)
+    
+    // 2 階層までならこの部分で実装する必要がある
+    const parentDirList = fs.readdirSync(parentPath,{withFileTypes:true}).filter(file=>file.isDirectory())
+    if(parentDirList.length){
+        return parentDirList.map((file) =>{
         const fileName = file.name.split(".")[0]
         const parsedFileList = selectedFileList[fileName]
         const filePath = ignoreFileName.includes(fileName)?"/":"/"+fileName
@@ -33,10 +37,20 @@ const  parsedParentFile =(rootDir,searchDir,yamlArray)=>{
                     children: parsedChildFile(parentPath,searchDir,filePath,parsedFileList.children)
                 }
         })
+    } else {
+        const DirList = fs.readdirSync(parentPath,{withFileTypes:true}).filter(file=>!file.isDirectory())
+        console.log(DirList);
+        console.log(searchDir);
+        console.log(selectedFileList.children)
+
+        return {
+
+        }
+    }
 
 }
 
 module.exports= parsedParentFile
 
-const file = parsedParentFile('src','web',getYamlFile);
+const file = parsedParentFile('src','tutorial',getYamlFile);
 console.log(file)
