@@ -33,6 +33,7 @@ module.exports = {
     }
 
   },
+  base:"https://denx-docsite.vercel.app/",
   markdown: {
       linkify: true,
       config: (md) => {
