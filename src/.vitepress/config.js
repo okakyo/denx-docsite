@@ -1,25 +1,15 @@
 const { description } = require('../../package')
-const parsedParentFile = require("./file");
+const {parsedParentFile,navLists} = require("./file");
 
 const fs = require("fs");
 const yaml = require("yaml")
 const getYamlFile = yaml.parse(fs.readFileSync(__dirname+"/nav.yaml",'utf-8'))
 
+const navList= navLists(getYamlFile)
 module.exports = {
-  /**
-   * Ref：https://v1.vuepress.vuejs.org/config/#title
-   */
-  title: 'DENX アーカイブ',
-  /**
-   * Ref：https://v1.vuepress.vuejs.org/config/#description
-   */
-  description: description,
 
-  /**
-   * Extra tags to be injected to the page HTML `<head>`
-   *
-   * ref：https://v1.vuepress.vuejs.org/config/#head
-   */
+  title: 'DENX アーカイブ',
+  description: description,
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
@@ -35,20 +25,7 @@ module.exports = {
     docsDir: 'src/docs',
     editLinkText: '',
     lastUpdated: false,
-    nav: [
-      {
-        text: '使い方',
-        link: '/tutorial/'
-      },
-      {
-        text: 'Web 勉強会',
-        link: '/web/',
-      },
-      {
-        text: 'VuePress',
-        link: 'https://vitepress.vuejs.org/'
-      }
-    ],
+    nav: navLists(getYamlFile),
     // TODO : Sidebar を自動化するシステム（yaml ファイルで管理したい）
     sidebar: {
       "/tutorial/":parsedParentFile("src","tutorial",getYamlFile),

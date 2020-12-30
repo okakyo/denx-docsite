@@ -1,5 +1,5 @@
 tutorial:
-  title: チュートリアル
+  title: 使い方
   children: 
     index: 1.はじめに
     markdown: 2.マークダウンの記法について

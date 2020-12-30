@@ -1,5 +1,6 @@
 const fs = require("fs");
 const yaml = require("yaml");
+const getYamlFile = yaml.parse(fs.readFileSync(__dirname+"/nav.yaml",'utf-8'))
 
 const ignoreFileName = ["README","index"]
 
@@ -68,5 +69,15 @@ const  parsedParentFile =(rootDir,searchDir,yamlArray)=>{
 
 }
 
-module.exports= parsedParentFile
+const navLists  = (yamlFlie)=>{
+    const FileKeys = Object.keys(yamlFlie)
+    return FileKeys.map(file=>{
+        return {
+            text: yamlFlie[file].title,
+            link: file+"/"
+        }
+    })
+}
 
+exports.parsedParentFile= parsedParentFile
+exports.navLists = navLists
