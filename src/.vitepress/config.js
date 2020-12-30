@@ -26,7 +26,8 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { href: '/css/style.css', rel: 'stylesheet'}],
     ['link', { href:"https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" ,rel: 'stylesheet'}],
-    ['link', { href:" https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css",rel:"stylesheet"}],
+    ['link', { href:" https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css",rel:"stylesheet"}], 
+    ['link', { rel: 'icon', href: 'img/hero.png' }] //Favicon 設定
   ],
   themeConfig: {
     repo: '',

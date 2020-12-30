@@ -1,11 +1,7 @@
 const fs = require("fs");
-const { join } = require("path");
 const yaml = require("yaml");
 
 const ignoreFileName = ["README","index"]
-
-const getYamlFile = yaml.parse(fs.readFileSync(__dirname+"/nav.yaml",'utf-8'))
-
 
 const parsedChildrenLink= (file,childPath,yamlArray)=>{
     const fileName = file.name.split(".")[0]
@@ -36,11 +32,9 @@ const parsedChildFile = (rootDir,parentDir,searchDir,yamlArray)=>{
 const  parsedParentFile =(rootDir,searchDir,yamlArray)=>{
     const parentPath = rootDir+"/"+searchDir
     const selectedFileList = yamlArray[searchDir]
-    console.log(parentPath)
     // 2 階層までならこの部分で実装する必要がある
     const parentDirList = fs.readdirSync(parentPath,{withFileTypes:true}).filter(file=>file.isDirectory())
     if(parentDirList.length){
-        console.log(parentDirList)
         const parsedDirList =parentDirList.map((file) =>{
         const fileName = file.name.split(".")[0]
         const parsedFileList = selectedFileList[fileName]
@@ -75,6 +69,4 @@ const  parsedParentFile =(rootDir,searchDir,yamlArray)=>{
 }
 
 module.exports= parsedParentFile
-const file = parsedParentFile("src","web",getYamlFile);
-console.log(file)
 
