@@ -7,7 +7,6 @@ const getYamlFile = yaml.parse(fs.readFileSync(__dirname+"/nav.yaml",'utf-8'))
 
 const navList= navLists(getYamlFile)
 module.exports = {
-
   title: 'DENX アーカイブ',
   description: description,
   head: [
@@ -33,7 +32,6 @@ module.exports = {
     }
 
   },
-  base:"https://denx-docsite.vercel.app",
   markdown: {
       linkify: true,
       config: (md) => {
