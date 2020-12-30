@@ -17,7 +17,8 @@
 
 - 記事を新しく追加するとき 
     1. 新規にMarkdown ファイルを追加する
-    2. `/src/.vitepress/nav.yaml`に次のように記事についての設定を行う
+
+新規にファイルやディレクトリを追加したときは、 `/src/.vitepress/nav.yaml`を次のように設定を行う
 
 <<< @/../example/nav.example.yaml
 
