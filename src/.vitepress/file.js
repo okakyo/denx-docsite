@@ -1,8 +1,22 @@
 const fs = require("fs");
-const yaml = require("yaml");
-const getYamlFile = yaml.parse(fs.readFileSync(__dirname+"/nav.yaml",'utf-8'))
+// const yaml = require("yaml");
+// const getYamlFile = yaml.parse(fs.readFileSync(__dirname+"/nav.yaml",'utf-8'))
 
 const ignoreFileName = ["README","index"]
+
+const sortList =(list)=>{
+    if (Array.isArray(list)){
+        return list.sort((left,right)=>{
+        const leftText = Number(left.text.split(".")[0]);
+        const rightText = Number(right.text.split(".")[0]);
+        return leftText<rightText?-1:leftText>rightText?1:0
+    })
+    } else {
+        throw Error("input invalid list type")
+    }
+    
+}
+
 
 const parsedChildrenLink= (file,childPath,yamlArray)=>{
     const fileName = file.name.split(".")[0]
@@ -14,20 +28,16 @@ const parsedChildrenLink= (file,childPath,yamlArray)=>{
     }
     
     return responseObject
-
 }
 
 
 const parsedChildFile = (rootDir,parentDir,searchDir,yamlArray)=>{
     const searchFilePath = rootDir+searchDir;
     const childPath = parentDir+searchDir
-    return fs.readdirSync(searchFilePath,{withFileTypes:true}).filter(file =>!file.isDirectory()).map(file =>{
+    const responseFileList = fs.readdirSync(searchFilePath,{withFileTypes:true}).filter(file =>!file.isDirectory()).map(file =>{
         return parsedChildrenLink(file,childPath,yamlArray)
-    }).sort((left,right)=>{
-        const leftText = left.text;
-        const rightText = right.text;
-        return leftText<rightText?-1:leftText>rightText?1:0
     })
+    return sortList(responseFileList)
 }
 
 const  parsedParentFile =(rootDir,searchDir,yamlArray)=>{
@@ -37,32 +47,23 @@ const  parsedParentFile =(rootDir,searchDir,yamlArray)=>{
     const parentDirList = fs.readdirSync(parentPath,{withFileTypes:true}).filter(file=>file.isDirectory())
     if(parentDirList.length){
         const parsedDirList =parentDirList.map((file) =>{
-        const fileName = file.name.split(".")[0]
-        const parsedFileList = selectedFileList[fileName]
-        const filePath = ignoreFileName.includes(fileName)?"/":"/"+fileName
-        return  {
-                    text: parsedFileList.title?parsedFileList.title:fileName,
-                    children: parsedChildFile(parentPath,searchDir,filePath,parsedFileList.children).sort((left,right)=>{
-                        const leftText = left.text;
-                        const rightText = right.text;
-                        return leftText<rightText?-1:leftText>rightText?1:0
-                    })
+            const fileName = file.name.split(".")[0]
+            const parsedFileList = selectedFileList[fileName]
+            const filePath = ignoreFileName.includes(fileName)?"/":"/"+fileName
+             const inputChildrenList= parsedChildFile(parentPath,searchDir,filePath,parsedFileList.children)
+            return  {
+                        text: parsedFileList.title?parsedFileList.title:fileName,
+                        children: sortList(inputChildrenList)
                 }
         })
-        return [{text:"はじめに",link:searchDir+"/"}].concat(parsedDirList.sort((left,right)=>{
-            const leftText = left.text;
-            const rightText = right.text;
-            return leftText<rightText?-1:leftText>rightText?1:0
-        }))
+
+        return [{text:"はじめに",link:searchDir+"/"}].concat((sortList(parsedDirList)))
     } else {
         const DirList = fs.readdirSync(parentPath,{withFileTypes:true}).filter(file=>!file.isDirectory())
+        const inputChildrenList =DirList.map(file=>parsedChildrenLink(file,"/"+searchDir,selectedFileList.children))
         return [{
             text: selectedFileList.title,
-            children:DirList.map(file=>parsedChildrenLink(file,"/"+searchDir,selectedFileList.children)).sort((left,right)=>{
-                const leftText = left.text;
-                const rightText = right.text;
-                return leftText<rightText?-1:leftText>rightText?1:0
-            })
+            children:sortList(inputChildrenList)
         
         }]
     }
@@ -72,8 +73,9 @@ const  parsedParentFile =(rootDir,searchDir,yamlArray)=>{
 const navLists  = (yamlFlie)=>{
     const FileKeys = Object.keys(yamlFlie)
     return FileKeys.map(file=>{
+        const fileTitle = yamlFlie[file].title
         return {
-            text: yamlFlie[file].title,
+            text: fileTitle?fileTitle:file,
             link: file+"/"
         }
     })

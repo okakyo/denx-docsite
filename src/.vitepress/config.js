@@ -26,7 +26,7 @@ module.exports = {
     editLinkText: '',
     lastUpdated: false,
     nav: navLists(getYamlFile),
-    // TODO : Sidebar を自動化するシステム（yaml ファイルで管理したい）
+    // TODO : この部分を自動化するコードを実装する必要あり（yaml ファイルで管理したい）
     sidebar: {
       "/tutorial/":parsedParentFile("src","tutorial",getYamlFile),
       "/web/":parsedParentFile("src","web",getYamlFile)
