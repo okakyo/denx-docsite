@@ -50,16 +50,7 @@ module.exports = {
     ],
     // TODO : Sidebar を自動化するシステム（yaml ファイルで管理したい）
     sidebar: {
-      "/tutorial/":[
-        {
-          text:`使い方`,
-          children:[
-            {text:"はじめに",link:"/tutorial/"},
-            {text:"マークダウンの記法",link:"/tutorial/markdown"},
-            {text:"ルール",link:"/tutorial/rule"}
-          ]
-        }
-      ],
+      "/tutorial/":parsedParentFile("src","tutorial",getYamlFile),
       "/web/":parsedParentFile("src","web",getYamlFile)
     }
 
