@@ -301,22 +301,6 @@ This is a dangerous warning
 - [a list of Emoji](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json)
 
 
-### コードの呼び出し
-
-このサイトでは、特定のファイルの中身を呼び出すことができる。
-
-- 書き方 
-
-`/example/hello.md` を呼び出したいとき
-
-```
-<<< @/../example/hello.md
-```
-
-- 結果
-
-<<< @/../example/hello.md
-
 ### Embed
 
 Youtube のURL を掲載して動画を流すこともできます。
