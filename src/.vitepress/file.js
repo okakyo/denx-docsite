@@ -1,7 +1,4 @@
 const fs = require("fs");
-// const yaml = require("yaml");
-// const getYamlFile = yaml.parse(fs.readFileSync(__dirname+"/nav.yaml",'utf-8'))
-
 const ignoreFileName = ["README","index"]
 
 const sortList =(list)=>{
@@ -80,6 +77,12 @@ const navLists  = (yamlFlie)=>{
         }
     })
 }
-
-exports.parsedParentFile= parsedParentFile
+const sidebarLists =(docDir,yamlFile)=>{
+    const responseList ={}
+    Object.keys(yamlFile).map(file=>{
+        responseList[`/${file}/`]=parsedParentFile(docDir,file,yamlFile)
+    })
+    return responseList
+}
+exports.sidebarLists= sidebarLists
 exports.navLists = navLists

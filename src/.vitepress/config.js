@@ -1,5 +1,5 @@
 const { description } = require('../../package')
-const {parsedParentFile,navLists} = require("./file");
+const {parsedParentFile,navLists, sidebarLists} = require("./file");
 
 const fs = require("fs");
 const yaml = require("yaml")
@@ -25,11 +25,7 @@ module.exports = {
     editLinkText: '',
     lastUpdated: false,
     nav: navLists(getYamlFile),
-    // TODO : この部分を自動化するコードを実装する必要あり（yaml ファイルで管理したい）
-    sidebar: {
-      "/tutorial/":parsedParentFile("src","tutorial",getYamlFile),
-      "/web/":parsedParentFile("src","web",getYamlFile)
-    }
+    sidebar:sidebarLists("src",getYamlFile)
 
   },
   markdown: {
